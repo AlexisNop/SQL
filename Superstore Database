@@ -1,3 +1,4 @@
+-- Superstore Dataset
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -25,12 +26,12 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
+-- Analysis:
 SELECT *
 FROM superstore
 LIMIT 5;
 
--- order the items by price
-
+-- Order the items by price.
 SELECT item_name, price
 FROM superstore
 ORDER BY price;
@@ -40,20 +41,19 @@ SELECT MAX(price), MIN(price), AVG(price)
 FROM superstore
 ;
 
--- What is the highest cost item in Kitchen Supplies?
-
+-- What items are in the Kitchen Supplies?
 SELECT item_name, price, category
 FROM superstore
 WHERE category = 'Kitchen Supplies'
 ;
 
+-- What is the highest cost item in Kitchen Supplies?
 SELECT MAX(price)
 FROM superstore
 WHERE category = 'Kitchen Supplies'
 ;
 
 -- Which item has the highest average rating?
-
 SELECT MAX(average_rating)
 FROM superstore
 ;
